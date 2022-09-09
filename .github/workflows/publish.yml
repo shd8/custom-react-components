@@ -7,11 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: "Check code and deploys to npm registry"
     steps:
-      - name: Check code from repo
-        uses: actions/checkout@v3
-
-      - name: Use npm registry credentials
+      - uses: actions/checkout@v3
       - uses: "actions/setup-node@v3"
         with:
           node-version: "16.x"

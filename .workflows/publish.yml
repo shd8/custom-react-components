@@ -1,0 +1,21 @@
+name: Publish package on NPM registry
+on:
+  push:
+    branches:
+      - main
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check code from repo
+          uses: actions/checkout@v3
+
+        - name: Use npm registry credentials
+        - uses: "actions/setup-node@v3"
+          with:
+            node-version: "16.x"
+            registry-url: "https://registry.npmjs.org"
+        - run: npm publish --access public
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}

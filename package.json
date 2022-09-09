@@ -1,6 +1,6 @@
 {
   "name": "@shadyfast8/shd8-components",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "author": "shd8",
   "description": "Custom components library",
   "main": "./dist/cjs/index.js",
